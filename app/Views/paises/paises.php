@@ -1,5 +1,6 @@
 <head>
-  <link rel="stylesheet" href="<?php echo base_url('/css/vistas.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/css/vistass.css'); ?>">
+
 
 </head>
 
@@ -64,7 +65,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary" id="btn_Guardar">Guardar</button>
+            <button type="submit" class="btn btn-primary" id="btn_Guardar" onclick="validar()">Guardar</button>
           </div>
         </div>
       </div>
@@ -72,33 +73,36 @@
   </form>
 
   <script>
-  function seleccionaPaises(id, tp) {
-    if (tp == 2) {
-      dataURL = "<?php echo base_url('/paises/buscar_Paises'); ?>" + "/" + id;
-      $.ajax({
-        type: "POST",
-        url: dataURL,
-        dataType: "json",
-        success: function(rs) {      
-          $("#tp").val(2);  
-          $("#id").val(id);  
-          $("#codigo").val(rs[0]['codigo']);
-          $("#nombre").val(rs[0]['nombres']);
-          $("#btn_Guardar").text('Actualizar');
-          $("#titulo").text('Editar Pais');
-          $("#AgregarPais").modal("show");
-        }
-      })
-    }else {
-      $("#tp").val(1);
-      $("#codigo").val('');
-      $("#id").val(''); 
-      $("#nombre").val('');
-      $("#btn_Guardar").text('Guardar');
-      $("#titulo").text('Agregar Pais');
-         }
 
-  };
+    function seleccionaPaises(id, tp) {
+      if (tp == 2) {
+        dataURL = "<?php echo base_url('/paises/buscar_Paises'); ?>" + "/" + id;
+        $.ajax({
+          type: "POST",
+          url: dataURL,
+          dataType: "json",
+          success: function(rs) {      
+            $("#tp").val(2);  
+            $("#id").val(id);  
+            $("#codigo").val(rs[0]['codigo']);
+            $("#nombre").val(rs[0]['nombres']);
+            $("#btn_Guardar").text('Actualizar');
+            $("#titulo").text('Editar Pais');
+            $("#AgregarPais").modal("show");
+          }
+        })
+      }else {
+        $("#tp").val(1);
+        $("#codigo").val('');
+        $("#id").val(''); 
+        $("#nombre").val('');
+        $("#btn_Guardar").text('Guardar');
+        $("#titulo").text('Agregar Pais');
+        
+      }
+      
+    };
+  
 </script>
 
 <!-- Modal Confirma Eliminar -->

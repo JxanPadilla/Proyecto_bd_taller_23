@@ -42,7 +42,7 @@
   </div>
 
     <!-- Modal -->
-    <form method="POST" action="<?php echo base_url('salarios/insertar'); ?> " autocomplete="off">
+    <form method="POST" action="<?php echo base_url('salarios/insertar') . '/' .$dato['id']; ?> " autocomplete="off">
 
 <div class="modal fade" id="AgregarSalarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -109,8 +109,9 @@
           $("#AgregarSalarios").modal("show");
         }else {
           $("#tp").val(1);
-          $("#periodo").val('');
-          $("#empleados").val(rs[0]['id_empleado']);
+          $("#periodo").val('Seleccionar Año');
+          // $("#empleados").val(rs[0]['id_empleado']);
+          $("#empleados").val('');
           $("#salario").val('');
           $("#btn_Guardar").text('Guardar');
           $("#titulo").text('Agregar Salarios');

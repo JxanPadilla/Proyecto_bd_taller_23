@@ -49,7 +49,7 @@ class Salarios extends BaseController
     }
 
 
-    public function insertar()
+    public function insertar($id)
     {
         $tp=$this->request->getPost('tp');
         if ($this->request->getMethod() == "post") {
@@ -66,12 +66,9 @@ class Salarios extends BaseController
                 ]);
 
             }
-            if(!$this->request->getPost('empleados')){
-                return redirect()->to(base_url('/salarios'));
-            }else{
                 return redirect()->to(base_url('/salarioemple/').$this->request->getPost('empleados'));
 
-            }
+            
         }
     }
 
@@ -89,28 +86,9 @@ class Salarios extends BaseController
     public function eliminar($id,$estado){
         $salarios_ = $this->salarios->elimina_Salarios($id,$estado);
         return redirect()->to(base_url('/salarios'));
+
+
     }
-
-    // public function insertar()
-    // {
-    //     $tp=$this->request->getPost('tp');
-    //     if ($this->request->getMethod() == "post") {
-    //         if ($tp == 1) {
-    //             $this->paises->save([
-    //                 'codigo' => $this->request->getPost('codigo'),
-    //                 'nombres' => $this->request->getPost('nombre')
-    //             ]);
-    //         } else {
-    //             $this->paises->update($this->request->getPost('id'),[
-    //                 'codigo' =>$this->request->getPost('codigo'),           
-    //                 'nombres'=> $this->request->getPost('nombre')
-    //             ]);
-
-    //         }
-    //         return redirect()->to(base_url('/paises'));
-    //     }
-    // }
-    
 }
 
 

@@ -1,0 +1,16 @@
+.titulo{
+    text-align: center;
+    color: #C40000;
+    font-family: Georgia, serif;
+}
+
+.regresar_btn{
+    height: 2.5rem;
+    width: 7rem;
+    
+}
+
+.table-responsive{
+    margin: 30px;
+}
+
