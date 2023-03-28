@@ -1,10 +1,10 @@
 <head>
-  <link rel="stylesheet" href="<?php echo base_url('/css/vistas.css'); ?>">
+
 
 </head>
 
-<body>
-    <h1 class="titulo"><?php echo "Administrar Cargos"; ?></h1>
+<body style="margin-top: 315px;">
+    <h1 class="titulo" style="position: relative; top: 10px; font-family: Georgia, serif; font-style: normal; font-size: 55px; text-align: center; color: #C40000; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"><?php echo "Administrar Cargos"; ?></h1>
 
     <div>
       <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarCargo" onclick="seleccionaCargo(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
@@ -43,7 +43,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="titulo">Agregar Cargo</h5>
+        <h5 class="modal-title" id="tituloo">Agregar Cargo</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -51,8 +51,8 @@
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Nombre:</label>
             <input type="text" name="nombre" id="nombre" class="form-control" id="message-text">
-            <input   id="tp" name="tp"></>
-            <input  id="id" name="id"></>
+            <input hidden  id="tp" name="tp"></>
+            <input hidden id="id" name="id"></>
           </div>
         </form>
       </div>
@@ -78,7 +78,7 @@
           $("#id").val(id);  
           $("#nombre").val(rs[0]['nombre']);
           $("#btn_Guardar").text('Actualizar');
-          $("#titulo").text('Editar Cargo');
+          $("#tituloo").text('Editar Cargo');
           $("#AgregarCargo").modal("show");
         }
       })
@@ -87,7 +87,7 @@
       $("#id").val(''); 
       $("#nombre").val('');
       $("#btn_Guardar").text('Guardar');
-      $("#titulo").text('Agregar Cargo');
+      $("#tituloo").text('Agregar Cargo');
          }
 
   };

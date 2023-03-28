@@ -1,14 +1,13 @@
 <head>
   <meta charset="utf-8" />
 
-
 </head>
 
-<body>
+<body style="margin-top: 245px;">
 
   <div class="card" style="width:72rem;">
     <div>
-      <h1 class="titulo_Vista">Empleados Eliminados</h1>
+      <h1 class="titulo" style="position: relative; top: 10px; font-family: Georgia, serif; font-style: normal; font-size: 55px; text-align: center; color: #C40000; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">Empleados Eliminados</h1>
     </div>
     <div class="card-body">
 
@@ -32,7 +31,6 @@
               <th>Municipio</th>
               <th>Nacimiento</th>
               <th>Cargo</th>
-              <th>Salario</th>
               <th>Estado</th>
               <th></th>
             </tr>
@@ -48,7 +46,6 @@
                 <td><?php echo $dato ['nombreMuni'];?></td>
                 <td><?php echo $dato ['nacimiento'];?></td>
                 <td><?php echo $dato ['nombreCargo'];?></td>
-                <td><?php echo $dato ['salario'];?></td>
                 <td><?php echo $dato ['estado'];?></td>
 
                  <td><button type="button" class="btn btn-secondary"  href="#" data-href="<?php echo base_url('/empleados/eliminar') . '/' .$dato['id']. '/' .'A'; ?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma">Activar</button></td>

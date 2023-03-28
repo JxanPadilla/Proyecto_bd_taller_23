@@ -1,12 +1,11 @@
 <head>
-  <link rel="stylesheet" href="<?php echo base_url('/css/vistas.css'); ?>">
 
 </head>
 
-<body>
-  <h1 class="titulo"><?php echo "Administrar Salarios"; ?></h1>
+<body style="margin-top: 315px;">
+  <h1 style="position: relative; top: 10px; font-family: Georgia, serif; font-style: normal; font-size: 55px; text-align: center; color: #C40000; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"><?php echo "Administrar Salarios"; ?></h1>
 
-  <div>
+  <div >
   <label hidden><?php foreach ($salarios as $dato) { ?><tr><td><?php echo $dato['id']; ?></td></tr><?php } ?></label>
   <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarSalarios" onclick="seleccionaSalarios(<?php echo $dato['id'] . ',' . 1 ?>);">Agregar</button>
   <a href="<?php echo base_url('eliminados_salarios'); ?>"  class="btn btn-secondary regresar_Btn">Eliminados</a>
@@ -48,7 +47,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="titulo" >Agregar Salarios</h5>
+        <h5 class="modal-title" id="tituloo" >Agregar Salarios</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -75,8 +74,8 @@
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Salario:</label>
                 <input type="number" name="salario" id="salario" class="form-control" id="message-text">
-            <input hidden  id="tp" name="tp"></>
-            <input hidden id="id" name="id"></>
+                <input hidden  id="tp" name="tp"></>
+                <input hidden id="id" name="id"></>
           </div>
         </form>
       </div>
@@ -105,7 +104,7 @@
           $("#empleados").val(rs[0]['id_empleado']);
           $("#salario").val(rs[0]['sueldo']);
           $("#btn_Guardar").text('Actualizar');
-          $("#titulo").text('Editar Salarios');
+          $("#tituloo").text('Editar Salarios');
           $("#AgregarSalarios").modal("show");
         }else {
           $("#tp").val(1);
@@ -114,7 +113,7 @@
           $("#empleados").val('');
           $("#salario").val('');
           $("#btn_Guardar").text('Guardar');
-          $("#titulo").text('Agregar Salarios');
+          $("#tituloo").text('Agregar Salarios');
         }
       }
     })

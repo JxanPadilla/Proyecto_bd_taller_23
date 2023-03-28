@@ -18,7 +18,7 @@ class Departamentos extends BaseController
         {   
             $departamentos = $this->departamentos->obtenerDepartamentos();      
             $paises= $this->paises->where('estado', "A")->findAll();    
-            $data = ['titulo' => 'Proyecto Taller','nombre'=>'Juan Padilla', 'departamentos' => $departamentos, 'paises'=>$paises]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
+            $data = ['titulo' => 'CLINICA DE MOTOCARROS','nombre'=>'Calidad Y Eficiencia', 'departamentos' => $departamentos, 'paises'=>$paises]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
             echo view('/principal/header' , $data);
             echo view('/departamentos/departamentos', $data);
 
@@ -62,7 +62,7 @@ class Departamentos extends BaseController
     {
         $departamentos = $this->departamentos->eliminados_departamentos();
         $paises= $this->paises->where('estado', "A")->findAll();
-        $data = ['titulo' => 'DEPARTAMENTOS ELIMINADOS', 'titulo' => 'Proyecto Taller','nombre'=>'Juan Padilla', 'departamentos' => $departamentos, 'paises' => $paises];
+        $data = ['titulo' => 'CLINICA DE MOTOCARROS','nombre'=>'Calidad Y Eficiencia', 'departamentos' => $departamentos, 'paises' => $paises];
         echo view('/principal/header', $data);
         echo view('departamentos/eliminados', $data);
        

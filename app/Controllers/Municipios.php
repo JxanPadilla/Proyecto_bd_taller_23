@@ -22,7 +22,7 @@ class Municipios extends BaseController
             $municipios= $this-> municipios->obtenerMunicipios(); 
             $paises= $this->paises->where('estado', "A")->findAll();    
             $departamentos = $this->departamentos->obtenerDepartamentos();        
-            $data = ['titulo' => 'Proyecto Taller','nombre'=>'Juan Padilla','municipios'=>$municipios, 'departamentos'=>$departamentos, 'paises'=>$paises]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
+            $data = ['titulo' => 'CLINICA DE MOTOCARROS','nombre'=>'Calidad Y Eficiencia','municipios'=>$municipios, 'departamentos'=>$departamentos, 'paises'=>$paises]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
             echo view('/principal/header' , $data);
             echo view('/municipios/municipios', $data);
 
@@ -74,7 +74,7 @@ class Municipios extends BaseController
         $municipios = $this->municipios->eliminados_municipios();
         $paises= $this->paises->where('estado', "A")->findAll();
         $departamentos = $this->departamentos->obtenerDepartamentos();
-        $data = ['titulo' => 'MUNICIPIOS ELIMINADOS', 'titulo' => 'Proyecto Taller','nombre'=>'Juan Padilla', 'departamentos' => $departamentos, 'municipios'=>$municipios, 'paises' => $paises];
+        $data = ['titulo' => 'CLINICA DE MOTOCARROS','nombre'=>'Calidad Y Eficiencia', 'departamentos' => $departamentos, 'municipios'=>$municipios, 'paises' => $paises];
         echo view('/principal/header', $data);
         echo view('municipios/eliminados', $data);
        

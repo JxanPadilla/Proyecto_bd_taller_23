@@ -46,28 +46,6 @@ class SalariosModel extends Model
         return $datos;
     }
 
-
-    public function guardar($sueldo, $periodo, $id_empleado)
-    {
-        $this->save([
-            'id_empleado' => $id_empleado,
-            'sueldo' => $sueldo,
-            'periodo' => $periodo
-
-        ]);
-    }
-
-    public function actualizar($sueldo, $periodo, $sal)
-    {
-        $this->update(
-            $sal,
-            [
-                'sueldo' => $sueldo,
-                'periodo' => $periodo
-            ]
-        );
-    }
-
     public function elimina_Salarios($id,$estado){
         $datos = $this->update($id, ['estado' => $estado]);        
         return $datos;

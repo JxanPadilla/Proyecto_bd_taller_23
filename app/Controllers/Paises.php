@@ -14,7 +14,7 @@ class Paises extends BaseController
         public function index() 
         {   
             $paises= $this->paises->where('estado', "A")->findAll();         
-            $data = ['titulo' => 'Proyecto Taller','nombre'=>'Juan Padilla','paises'=>$paises]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
+            $data = ['titulo' => 'CLINICA DE MOTOCARROS','nombre'=>'Calidad Y Eficiencia','paises'=>$paises]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
             echo view('/principal/header' , $data);
             echo view('/paises/paises', $data);
 
@@ -54,7 +54,7 @@ class Paises extends BaseController
     public function eliminados()
     {
         $paises = $this->paises->where('estado','E')->findAll();
-        $data = ['titulo' => 'PAISES ELIMINADOS', 'titulo' => 'Proyecto Taller','nombre'=>'Juan Padilla', 'datos' => $paises];
+        $data = ['titulo' => 'CLINICA DE MOTOCARROS','nombre'=>'Calidad Y Eficiencia', 'datos' => $paises];
 
         echo view('/principal/header', $data);
         echo view('paises/eliminados', $data);

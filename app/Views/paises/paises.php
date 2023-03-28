@@ -1,11 +1,8 @@
 <head>
-  <link rel="stylesheet" href="<?php echo base_url('/css/vistass.css'); ?>">
-
-
 </head>
 
-<body>
-  <h1 class="titulo"><?php echo "Administrar Paises"; ?></h1>
+<body style="margin-top: 315px;">
+  <h1 style="position: relative; top: 10px; font-family: Georgia, serif; font-style: normal; font-size: 55px; text-align: center; color: #C40000; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"><?php echo "Administrar Paises"; ?></h1>
 
   <div>
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarPais" onclick="seleccionaPaises(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
@@ -17,7 +14,7 @@
   <div class="table-responsive">
     <table class="table table-bordered table-sm table-striped" id="dataTable" width="100%" cellspacing="0">
       <thead>
-        <tr style="color:#342C6E;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
+        <tr style="color: #00278C;font-family: 'Amaranth';font-style: normal;font-size: 20px;text-align: center;">
           <th>Id</th>
           <th>Codigo</th>
           <th>Nombre</th>
@@ -25,15 +22,15 @@
           <th colspan="2">Acciones</th>
         </tr>
       </thead>
-      <tbody style="font-family:Arial;font-size:12px;">
+      <tbody style="color: #00278C;font-family: 'Amaranth';font-style: normal;font-size: 20px;text-align: center;" >
         <?php foreach ($paises as $dato) { ?>
           <tr>
             <td><?php echo $dato['id']; ?></td>
             <td><?php echo $dato['codigo']; ?></td>
             <td><?php echo $dato['nombres']; ?></td>
             <td><?php echo $dato['estado']; ?></td>
-            <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarPais" onclick="seleccionaPaises(<?php echo $dato['id'] . ',' . 2 ?>);">editar</button>
-            <button type="button" class="btn btn-secondary"  href="#" data-href="<?php echo base_url('/paises/eliminar') . '/' .$dato['id']. '/' .'E'; ?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma">Eliminar</button></td> 
+            <td><button style="font-family:Arial;font-size:17px;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarPais" onclick="seleccionaPaises(<?php echo $dato['id'] . ',' . 2 ?>);">editar</button>
+            <button  style="font-family:Arial;font-size:17px;" type="button" class="btn btn-secondary"  href="#" data-href="<?php echo base_url('/paises/eliminar') . '/' .$dato['id']. '/' .'E'; ?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma">Eliminar</button></td> 
            
         <?php } ?>
       </tbody>
@@ -46,7 +43,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="titulo" >Agregar País</h5>
+            <h5 class="modal-title" id="tituloo" >Agregar País</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -87,7 +84,7 @@
             $("#codigo").val(rs[0]['codigo']);
             $("#nombre").val(rs[0]['nombres']);
             $("#btn_Guardar").text('Actualizar');
-            $("#titulo").text('Editar Pais');
+            $("#tituloo").text('Editar Pais');
             $("#AgregarPais").modal("show");
           }
         })
@@ -97,7 +94,7 @@
         $("#id").val(''); 
         $("#nombre").val('');
         $("#btn_Guardar").text('Guardar');
-        $("#titulo").text('Agregar Pais');
+        $("#tituloo").text('Agregar Pais');
         
       }
       

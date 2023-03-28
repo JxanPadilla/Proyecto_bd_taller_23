@@ -26,11 +26,10 @@ class EmpleadosModel extends Model{
 
 
     public function traer_Empleados($id){
-        $this->select('empleados.*,municipios.nombre as nombreMuni, cargos.nombre as nombreCargo,departamentos.id as id_dpto, paises.id as id_Pais, salarios.sueldo as salario, salarios.id as id_salario, salarios.periodo as periodo');
+        $this->select('empleados.*,municipios.nombre as nombreMuni, cargos.nombre as nombreCargo,departamentos.id as id_dpto, paises.id as id_Pais');
         $this->join('municipios', 'municipios.id = empleados.id_municipio');
         $this->join('departamentos', 'departamentos.id = municipios.id_dpto');
         $this->join('paises', 'paises.id = departamentos.id_pais');
-        $this->join('salarios', 'salarios.id_empleado = empleados.id', 'left');
         $this->join('cargos', 'cargos.id = empleados.id_cargo');
         $this->where('empleados.id', $id);  
         $datos = $this->first();  // nos trae el registro que cumpla con una condicion dada 
@@ -38,11 +37,10 @@ class EmpleadosModel extends Model{
     }
 
     public function obtenerEmpleados(){
-        $this->select('empleados.*,municipios.nombre as nombreMuni, cargos.nombre as nombreCargo, departamentos.nombre as nombre_dpto, paises.nombres as nombrePais, salarios.sueldo as salario, salarios.id as id_salario, salarios.periodo as periodo');
+        $this->select('empleados.*,municipios.nombre as nombreMuni, cargos.nombre as nombreCargo, departamentos.nombre as nombre_dpto, paises.nombres as nombrePais');
         $this->join('municipios', 'municipios.id = empleados.id_municipio');
         $this->join('departamentos', 'departamentos.id = municipios.id_dpto');
         $this->join('paises', 'paises.id = departamentos.id_pais');
-        $this->join('salarios', 'salarios.id_empleado = empleados.id', 'left');
         $this->join('cargos', 'cargos.id = empleados.id_cargo');
         $this->where('empleados.estado', 'A');
         $this->orderBy('empleados.id');
@@ -57,11 +55,10 @@ class EmpleadosModel extends Model{
     }
  
     public function eliminados_empleados(){
-        $this->select('empleados.*,municipios.nombre as nombreMuni, cargos.nombre as nombreCargo, departamentos.nombre as nombre_dpto, paises.nombres as nombrePais, salarios.sueldo as salario, salarios.id as id_salario, salarios.periodo as periodo');
+        $this->select('empleados.*,municipios.nombre as nombreMuni, cargos.nombre as nombreCargo, departamentos.nombre as nombre_dpto, paises.nombres as nombrePais');
         $this->join('municipios', 'municipios.id = empleados.id_municipio');
         $this->join('departamentos', 'departamentos.id = municipios.id_dpto');
         $this->join('paises', 'paises.id = departamentos.id_pais');
-        $this->join('salarios', 'salarios.id_empleado  = empleados.id', 'left');
         $this->join('cargos', 'cargos.id = empleados.id_cargo');
         $this->where('empleados.estado', 'E');
         $this->orderBy('empleados.id');

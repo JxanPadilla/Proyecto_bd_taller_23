@@ -1,3 +1,138 @@
 CRITICAL - 2023-03-28 04:20:21 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
 in APPPATH\Controllers\Principal.php on line 4.
  1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-03-28 16:10:57 --> Cannot use empty array elements in arrays
+in APPPATH\Controllers\Salarios.php on line 80.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-03-28 16:19:57 --> Undefined variable $dato
+in APPPATH\Views\salarios\salarios.php on line 10.
+ 1 APPPATH\Views\salarios\salarios.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dato', 'APPPATH\\Views\\salarios\\salarios.php', 10)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\salarios\\salarios.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/salarios/salarios', [], true)
+ 5 APPPATH\Controllers\Salarios.php(35): view('/salarios/salarios', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Salarios->salariosG('3')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Salarios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-28 16:20:01 --> Undefined variable $dato
+in APPPATH\Views\salarios\salarios.php on line 10.
+ 1 APPPATH\Views\salarios\salarios.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dato', 'APPPATH\\Views\\salarios\\salarios.php', 10)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\salarios\\salarios.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/salarios/salarios', [], true)
+ 5 APPPATH\Controllers\Salarios.php(35): view('/salarios/salarios', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Salarios->salariosG('6')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Salarios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-28 16:23:08 --> mysqli_sql_exception: Unknown column 'salarios.sueldo' in 'field list' in C:\xampp\htdocs\proyecto\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto\app\Models\EmpleadosModel.php(48): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto\app\Controllers\Empleados.php(32): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-28 16:23:08 --> Unknown column 'salarios.sueldo' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `municipios`.`nombre` as `nombreMuni`, `cargos`.`nombre` as `nombreCargo`, `departamentos`.`nombre` as `nombre_dpto`, `paises`.`nombres` as `nombrePais`, `salarios`.`sueldo` as `salario`, `salarios`.`id` as `id_salario`, `salarios`.`periodo` as `periodo`
+FROM `empleados`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+JOIN `paises` ON `paises`.`id` = `departamentos`.`id_pais`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+WHERE `empleados`.`estado` = :empleados.estado:
+ORDER BY `empleados`.`id`', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(48): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(32): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-28 16:23:47 --> mysqli_sql_exception: Unknown column 'salarios.sueldo' in 'field list' in C:\xampp\htdocs\proyecto\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyecto\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `emplead...', 0)
+#1 C:\xampp\htdocs\proyecto\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `emplead...')
+#2 C:\xampp\htdocs\proyecto\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `emplead...')
+#3 C:\xampp\htdocs\proyecto\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `emplead...', Array, false)
+#4 C:\xampp\htdocs\proyecto\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto\app\Models\EmpleadosModel.php(48): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto\app\Controllers\Empleados.php(32): App\Models\EmpleadosModel->obtenerEmpleados()
+#8 C:\xampp\htdocs\proyecto\system\CodeIgniter.php(934): App\Controllers\Empleados->index()
+#9 C:\xampp\htdocs\proyecto\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+#10 C:\xampp\htdocs\proyecto\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-28 16:23:47 --> Unknown column 'salarios.sueldo' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `empleados`.*, `municipios`.`nombre` as `nombreMuni`, `cargos`.`nombre` as `nombreCargo`, `departamentos`.`nombre` as `nombre_dpto`, `paises`.`nombres` as `nombrePais`, `salarios`.`sueldo` as `salario`, `salarios`.`id` as `id_salario`, `salarios`.`periodo` as `periodo`
+FROM `empleados`
+JOIN `municipios` ON `municipios`.`id` = `empleados`.`id_municipio`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+JOIN `paises` ON `paises`.`id` = `departamentos`.`id_pais`
+JOIN `cargos` ON `cargos`.`id` = `empleados`.`id_cargo`
+WHERE `empleados`.`estado` = :empleados.estado:
+ORDER BY `empleados`.`id`', [...], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EmpleadosModel.php(48): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Empleados.php(32): App\Models\EmpleadosModel->obtenerEmpleados()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-28 16:24:43 --> Undefined array key "id_salario"
+in APPPATH\Views\empleados\empleados.php on line 32.
+ 1 APPPATH\Views\empleados\empleados.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_salario"', 'APPPATH\\Views\\empleados\\empleados.php', 32)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\empleados\\empleados.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/empleados/empleados', [], true)
+ 5 APPPATH\Controllers\Empleados.php(40): view('/empleados/empleados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-28 16:27:17 --> Undefined array key "salario"
+in APPPATH\Views\empleados\eliminados.php on line 50.
+ 1 APPPATH\Views\empleados\eliminados.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "salario"', 'APPPATH\\Views\\empleados\\eliminados.php', 50)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\empleados\\eliminados.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('empleados/eliminados', [], true)
+ 5 APPPATH\Controllers\Empleados.php(109): view('empleados/eliminados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->eliminados()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-28 16:57:24 --> Undefined variable $dato
+in APPPATH\Views\salarios\salarios.php on line 10.
+ 1 APPPATH\Views\salarios\salarios.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dato', 'APPPATH\\Views\\salarios\\salarios.php', 10)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\salarios\\salarios.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/salarios/salarios', [], true)
+ 5 APPPATH\Controllers\Salarios.php(35): view('/salarios/salarios', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Salarios->salariosG('3')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Salarios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-28 16:57:55 --> Undefined variable $dato
+in APPPATH\Views\salarios\salarios.php on line 10.
+ 1 APPPATH\Views\salarios\salarios.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dato', 'APPPATH\\Views\\salarios\\salarios.php', 10)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\salarios\\salarios.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/salarios/salarios', [], true)
+ 5 APPPATH\Controllers\Salarios.php(35): view('/salarios/salarios', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Salarios->salariosG('3')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Salarios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

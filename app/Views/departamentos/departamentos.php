@@ -1,10 +1,9 @@
 <head>
-  <link rel="stylesheet" href="<?php echo base_url('/css/vistas.css'); ?>">
 
 </head>
 
-<body>
-  <h1 class="titulo"><?php echo "Administrar Departamentos"; ?></h1>
+<body style="margin-top: 315px;">
+  <h1 class="titulo" style="position: relative; top: 10px; font-family: Georgia, serif; font-style: normal; font-size: 55px; text-align: center; color: #C40000; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"><?php echo "Administrar Departamentos"; ?></h1>
 
   <div>
   <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarDepartamento" onclick="seleccionaDepartamento(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
@@ -45,7 +44,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="titulo" >Agregar Departamento</h5>
+        <h5 class="modal-title" id="tituloo" >Agregar Departamento</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -90,7 +89,7 @@
           $("#pais").val(rs[0]['id_pais']);
           $("#nombre").val(rs[0]['nombre']);
           $("#btn_Guardar").text('Actualizar');
-          $("#titulo").text('Editar Departamento');
+          $("#tituloo").text('Editar Departamento');
           $("#AgregarDepartamento").modal("show");
         }
       })
@@ -98,7 +97,7 @@
       $("#tp").val(1);
       $("#nombre").val('');
       $("#btn_Guardar").text('Guardar');
-      $("#titulo").text('Agregar Departamento');
+      $("#tituloo").text('Agregar Departamento');
          }
 
   };

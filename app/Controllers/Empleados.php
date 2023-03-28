@@ -35,7 +35,7 @@ class Empleados extends BaseController
         $paises = $this->paises->where('estado', "A")->findAll();
         $cargos = $this->cargos->where('estado', "A")->findAll();
         $salarios = $this->salarios->where('estado', "A")->findAll();
-        $data = ['titulo' => 'Proyecto Taller', 'nombre' => 'Juan Padilla', 'empleados' => $empleados, 'cargos' => $cargos, 'departamentos' => $departamentos, 'municipios' => $municipios, 'paises' => $paises, 'salarios' => $salarios]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
+        $data = ['titulo' => 'CLINICA DE MOTOCARROS','nombre'=>'Calidad Y Eficiencia', 'empleados' => $empleados, 'cargos' => $cargos, 'departamentos' => $departamentos, 'municipios' => $municipios, 'paises' => $paises, 'salarios' => $salarios]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
         echo view('/principal/header', $data);
         echo view('/empleados/empleados', $data);
 
@@ -84,15 +84,6 @@ class Empleados extends BaseController
                 'nacimiento' => $this->request->getPost('nacimiento'),
                 'id_cargo' => $this->request->getPost('cargo')
             ]);
-
-            $sueldo = $this->request->getPost('salario');
-            $periodo = $this->request->getPost('periodo');
-            $id_empleado = $this->empleados->getInsertID();
-
-            echo $id_empleado;
-
-            $this->salarios->guardar($sueldo, $periodo, $id_empleado); 
-
             return redirect()->to(base_url('/empleados'));
         } else {
             $this->empleados->update($this->request->getPost('id'), [
@@ -104,12 +95,6 @@ class Empleados extends BaseController
 
             ]);
 
-            $sueldo = $this->request->getPost('salario');
-            $periodo = $this->request->getPost('periodo');
-            $sal = $this->request->getPost('sal');
-
-            $this->salarios->actualizar($sueldo, $periodo, $sal); 
-
             return redirect()->to(base_url('/empleados'));
         }
     }
@@ -119,7 +104,7 @@ class Empleados extends BaseController
         $empleados = $this->empleados->eliminados_empleados();
         $municipios = $this->municipios->obtenerMunicipios();
         $cargos = $this->cargos->where('estado', "A")->findAll();
-        $data = ['titulo' => 'EMPLEADOS ELIMINADOS', 'titulo' => 'Proyecto Taller', 'nombre' => 'Juan Padilla', 'municipios' => $municipios, 'empleados' => $empleados, 'cargos' => $cargos];
+        $data = ['titulo' => 'CLINICA DE MOTOCARROS','nombre'=>'Calidad Y Eficiencia', 'municipios' => $municipios, 'empleados' => $empleados, 'cargos' => $cargos];
         echo view('/principal/header', $data);
         echo view('empleados/eliminados', $data);
     }

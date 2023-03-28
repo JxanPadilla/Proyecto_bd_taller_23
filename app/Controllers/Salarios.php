@@ -18,7 +18,7 @@ class Salarios extends BaseController
         {   
             $empleados = $this->empleados->obtenerEmpleados();       
             $salarios= $this->salarios->obtenerSalarios(0);         
-            $data = ['titulo' => 'Proyecto Taller','nombre'=>'Juan Padilla','salarios'=>$salarios, 'empleados' => $empleados]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
+            $data = ['titulo' => 'CLINICA DE MOTOCARROS','nombre'=>'Calidad Y Eficiencia','salarios'=>$salarios, 'empleados' => $empleados]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
             echo view('/principal/header' , $data);
             echo view('/salarios/salarios', $data);
 
@@ -30,7 +30,7 @@ class Salarios extends BaseController
         {   
             $empleados = $this->empleados->obtenerEmpleados();       
             $salarios= $this->salarios->obtenerSalarios($id);         
-            $data = ['titulo' => 'Proyecto Taller','nombre'=>'Juan Padilla','salarios'=>$salarios, 'empleados' => $empleados]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
+            $data = ['titulo' => 'CLINICA DE MOTOCARROS','nombre'=>'Calidad Y Eficiencia','salarios'=>$salarios, 'empleados' => $empleados]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
             echo view('/principal/header' , $data);
             echo view('/salarios/salarios', $data);
 
@@ -77,7 +77,7 @@ class Salarios extends BaseController
     {
         $salarios = $this->salarios->eliminados_salarios();
         $empleados = $this->empleados->obtenerEmpleados();
-        $data = ['titulo' => 'SALARIOS ELIMINADOS', 'titulo' => 'Proyecto Taller','nombre'=>'Juan Padilla', 'salarios'=>$salarios, 'empleados' => $empleados];
+        $data = ['titulo' => 'CLINICA DE MOTOCARROS','nombre'=>'Calidad Y Eficiencia', 'salarios'=>$salarios, 'empleados' => $empleados];
         echo view('/principal/header', $data);
         echo view('salarios/eliminados', $data);
        

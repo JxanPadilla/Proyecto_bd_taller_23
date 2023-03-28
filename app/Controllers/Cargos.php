@@ -14,7 +14,7 @@ class cargos extends BaseController
         public function index() 
         {   
             $cargos= $this->cargos->where('estado', "A")->findAll();         
-            $data = ['titulo' => 'Proyecto Taller','nombre'=>'Yuleidis Avilez','cargos'=>$cargos]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
+            $data = ['titulo' => 'CLINICA DE MOTOCARROS','nombre'=>'Calidad Y Eficiencia','cargos'=>$cargos]; // le asignamos a la variable data, que es la que interactua con la vista, los datos obtenidos del modelo, ademas de enviarle una variable titulo para el reporte.
             echo view('/principal/header' , $data);
             echo view('/cargos/cargos', $data);
 
@@ -57,7 +57,7 @@ class cargos extends BaseController
     public function eliminados()
     {
         $cargos = $this->cargos->where('estado','E')->findAll();
-        $data = ['titulo' => 'CARGOS ELIMINADOS', 'titulo' => 'Proyecto Taller','nombre'=>'Juan Padilla', 'datos' => $cargos];
+        $data = ['titulo' => 'CLINICA DE MOTOCARROS','nombre'=>'Calidad Y Eficiencia', 'datos' => $cargos];
 
         echo view('/principal/header', $data);
         echo view('cargos/eliminados', $data);

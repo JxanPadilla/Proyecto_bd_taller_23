@@ -1,10 +1,9 @@
 <head>
-  <link rel="stylesheet" href="<?php echo base_url('/css/vistas.css'); ?>">
 
 </head>
 
-<body>
-  <h1 class="titulo"><?php echo "Administrar Empleados"; ?></h1>
+<body style="margin-top: 315px;">
+  <h1 class="titulo" style="position: relative; top: 10px; font-family: Georgia, serif; font-style: normal; font-size: 55px; text-align: center; color: #C40000; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"><?php echo "Administrar Empleados"; ?></h1>
 
   <div>
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarEmpleados" onclick="seleccionaEmpleado(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
@@ -24,14 +23,12 @@
           <th>Municipio</th>
           <th>Nacimiento</th>
           <th>Cargo</th>
-          <th>Salario</th>
           <th>Estado</th>
           <th colspan="2">Acciones</th>
         </tr>
       </thead>
       <tbody style="font-family:Arial;font-size:12px;">
         <?php foreach ($empleados as $dato) { ?>
-          <input id="id_salario" name="id_salario" value="<?php echo $dato['id_salario']; ?>" hidden></>
           <tr>
             <td><?php echo $dato['id']; ?></td>
             <td><?php echo $dato['nombres']; ?></td>
@@ -41,7 +38,6 @@
             <td><?php echo $dato['nombreMuni']; ?></td>
             <td><?php echo $dato['nacimiento']; ?></td>
             <td><?php echo $dato['nombreCargo']; ?></td>
-            <td><?php echo $dato['salario']; ?></td>
             <td><?php echo $dato['estado']; ?></td>
             <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarEmpleados" onclick="seleccionaEmpleado(<?php echo $dato['id'] . ',' . 2 ?>);">editar</button>
               <button type="button" class="btn btn-secondary" href="#" data-href="<?php echo base_url('/empleados/eliminar') . '/' . $dato['id'] . '/' . 'E'; ?>" data-bs-toggle="modal" data-bs-target="#modal-confirma">Eliminar</button>
@@ -60,7 +56,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="titulo">Agregar Empleado</h5>
+            <h5 class="modal-title" id="tituloo">Agregar Empleado</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -120,20 +116,6 @@
                   <?php foreach ($cargos as $dato) { ?>
                     <option value="<?php echo $dato['id']; ?>"><?php echo $dato['nombre']; ?></option>
                   <?php } ?>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="message-text" class="col-form-label">Salario:</label>
-                <input type="number" name="salario" id="salario" class="form-control" id="message-text">
-              </div>
-              <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">Periodo:</label>
-                <select class="form-select" name="periodo" id="periodo">
-                  <option selected>Seleccionar Año</option>
-                  <?php $years = range(strftime("%Y", time()), 1940); ?>
-                  <?php foreach ($years as $year) : ?>
-                    <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
-                  <?php endforeach; ?>
                 </select>
               </div>
             </form>
@@ -222,11 +204,10 @@
             $("#muni").val(rs[0]['id_municipio']);
             obtenerDepartamento(rs[0]['id_Pais'], rs[0]['id_dpto'], rs[0]['id_municipio']);
             $("#nacimiento").val(rs[0]['nacimiento']);
-            $("#salario").val(rs[0]['salario']);
             $("#periodo").val(rs[0]['periodo']);
             $("#cargo").val(rs[0]['id_cargo']);
             $("#btn_Guardar").text('Actualizar');
-            $("#titulo").text('Editar Empleado');
+            $("#tituloo").text('Editar Empleado');
             $("#AgregarEmpleados").modal("show");
           }
         })
@@ -239,10 +220,9 @@
         $("#dptoselect").val('Seleccionar Departamento');
         $("#muni").val('Seleccionar Municipio');
         $("#cargo").val('Seleccionar Cargo');
-        $("#salario").val('');
         $("#periodo").val('');
         $("#btn_Guardar").text('Guardar');
-        $("#titulo").text('Agregar Empleado');
+        $("#tituloo").text('Agregar Empleado');
       }
 
     };
