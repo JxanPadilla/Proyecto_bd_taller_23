@@ -23,7 +23,7 @@
       <div class="table-responsive">
         <table class="table table-bordered table-sm table-striped" id="dataTable" width="100%" cellspacing="0">
           <thead>
-            <tr style="color:#98040a;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
+            <tr style="color: #98040a; background: #6095BC; font-family: 'Amaranth';font-style: normal;font-size: 20px;text-align: center;">
               <th>Id</th>
               <th>Pais</th>
               <th>Nombre</th>
@@ -31,7 +31,7 @@
               <th></th>
             </tr>
           </thead>
-          <tbody style="font-family:Arial;font-size:12px;">
+          <tbody style="background: #9de8ff; font-family: 'Amaranth';font-style: normal;font-size: 20px;text-align: center;" >
             <?php foreach ($departamentos as $dato) { ?>
               <tr>
                 <td><?php echo $dato['id']; ?></td>

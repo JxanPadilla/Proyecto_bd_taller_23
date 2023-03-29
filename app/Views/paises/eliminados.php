@@ -4,16 +4,15 @@
 
 <body style="margin-top: 245px;">
 
-  <div class="card" style="width:133rem;">
     <div>
       <h1 class="titulo" style="position: relative; top: 10px; font-family: Georgia, serif; font-style: normal; font-size: 55px; text-align: center; color: #C40000; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">Paises Eliminados</h1>
     </div>
-    <div class="card-body">
+    <div class="card-body" >
 
       <div class="row col-sm-12" >
       <div class="col-md-5ths col-lg-5ths col-xs-6 col-sm-5"></div>
       <div class="col-md-5ths col-lg-5ths col-xs-6 col-sm-2">        
-        <a style="display: flex; align-items: center; justify-content: center; " href="<?php echo base_url('/paises'); ?>" class="btn btn-primary regresar_Btn">Regresar</a>
+        <a style="margin-left: -813px;" href="<?php echo base_url('/paises'); ?>" class="btn btn-primary regresar_Btn">Regresar</a>
       </div>
       </div>
 
@@ -21,7 +20,7 @@
       <div class="table-responsive">
         <table class="table table-bordered table-sm table-striped" id="dataTable" width="100%" cellspacing="0">
           <thead>
-            <tr style="color:#98040a;font-family: 'Amaranth';font-style: normal;font-size: 20px;text-align: center;">
+            <tr style="color: #98040a; background: #6095BC; font-family: 'Amaranth';font-style: normal;font-size: 20px;text-align: center;">
               <th>Id</th>
               <th>Codigo</th>
               <th>Nombre</th>
@@ -29,9 +28,9 @@
               <th></th>
             </tr>
           </thead>
-          <tbody style="color: #00278C;font-family: 'Amaranth';font-style: normal;font-size: 20px;text-align: center;" >
+          <tbody style="background: #9de8ff; font-family: 'Amaranth';font-style: normal;font-size: 20px;text-align: center;" >
             <?php foreach ($datos as $dato) { ?>
-              <tr>
+              <tr >
                 <td><?php echo $dato['id']; ?></td>
                 <td><?php echo $dato['codigo']; ?></td>
                 <td><?php echo $dato['nombres']; ?></td>

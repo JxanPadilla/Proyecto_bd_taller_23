@@ -110,7 +110,7 @@
           $("#tp").val(1);
           $("#periodo").val('Seleccionar Año');
           // $("#empleados").val(rs[0]['id_empleado']);
-          $("#empleados").val('');
+          $("#empleados").val('Seleccionar Empleado');
           $("#salario").val('');
           $("#btn_Guardar").text('Guardar');
           $("#tituloo").text('Agregar Salarios');

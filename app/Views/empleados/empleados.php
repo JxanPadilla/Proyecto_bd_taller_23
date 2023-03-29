@@ -14,7 +14,7 @@
   <div class="table-responsive">
     <table class="table table-bordered table-sm table-striped" id="dataTable" width="100%" cellspacing="0">
       <thead>
-        <tr style="color:#342C6E;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
+        <tr style="color: #000632; background: #6095BC; font-family: 'Amaranth';font-style: normal;font-size: 20px;text-align: center;">
           <th>Id</th>
           <th>Nombres</th>
           <th>Apellidos</th>
@@ -27,7 +27,7 @@
           <th colspan="2">Acciones</th>
         </tr>
       </thead>
-      <tbody style="font-family:Arial;font-size:12px;">
+      <tbody style="background: #9de8ff; font-family: 'Amaranth';font-style: normal;font-size: 20px;text-align: center;">
         <?php foreach ($empleados as $dato) { ?>
           <tr>
             <td><?php echo $dato['id']; ?></td>
@@ -39,9 +39,9 @@
             <td><?php echo $dato['nacimiento']; ?></td>
             <td><?php echo $dato['nombreCargo']; ?></td>
             <td><?php echo $dato['estado']; ?></td>
-            <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarEmpleados" onclick="seleccionaEmpleado(<?php echo $dato['id'] . ',' . 2 ?>);">editar</button>
-              <button type="button" class="btn btn-secondary" href="#" data-href="<?php echo base_url('/empleados/eliminar') . '/' . $dato['id'] . '/' . 'E'; ?>" data-bs-toggle="modal" data-bs-target="#modal-confirma">Eliminar</button>
-              <a href="<?php echo base_url('/salarioemple') . '/' . $dato['id'] ?>" class="btn btn-primary regresar_btn">salarios</a>
+            <td><button style="font-family:Arial;font-size:17px;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarEmpleados" onclick="seleccionaEmpleado(<?php echo $dato['id'] . ',' . 2 ?>);">editar</button>
+              <button style="font-family:Arial;font-size:17px;" type="button" class="btn btn-secondary" href="#" data-href="<?php echo base_url('/empleados/eliminar') . '/' . $dato['id'] . '/' . 'E'; ?>" data-bs-toggle="modal" data-bs-target="#modal-confirma">Eliminar</button>
+              <a style="font-family:Arial;font-size:17px;" href="<?php echo base_url('/salarioemple') . '/' . $dato['id'] ?>" class="btn btn-primary regresar_btn">salarios</a>
             </td>
           </tr>
         <?php } ?>
@@ -220,6 +220,7 @@
         $("#dptoselect").val('Seleccionar Departamento');
         $("#muni").val('Seleccionar Municipio');
         $("#cargo").val('Seleccionar Cargo');
+        $("#nacimiento").val('Seleccionar Año');
         $("#periodo").val('');
         $("#btn_Guardar").text('Guardar');
         $("#tituloo").text('Agregar Empleado');

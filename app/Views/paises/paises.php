@@ -1,20 +1,22 @@
 <head>
 </head>
 
-<body style="margin-top: 315px;">
-  <h1 style="position: relative; top: 10px; font-family: Georgia, serif; font-style: normal; font-size: 55px; text-align: center; color: #C40000; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"><?php echo "Administrar Paises"; ?></h1>
+<body style="margin-top: 270px;">
+  <h1 style="position: relative; top: 10px; font-family: Georgia, serif; font-style: normal; font-size: 55px; text-align: center; color:#00278C; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"><?php echo "Administrar Paises"; ?></h1>
+  <img id="bpai" src="<?php echo base_url('/img/agregarP.png'); ?>">
+  <img id="epai" src="<?php echo base_url('/img/eliminadosP.png'); ?>">
 
-  <div>
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarPais" onclick="seleccionaPaises(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
-    <a href="<?php echo base_url('eliminados_paises'); ?>"  class="btn btn-secondary regresar_Btn">Eliminados</a>
+  <div style="margin-top: 20px; ">
+    <button style="margin-left: 80px;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarPais" onclick="seleccionaPaises(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
+    <a  style="margin-left: 80px;" href="<?php echo base_url('eliminados_paises'); ?>"  class="btn btn-secondary regresar_Btn">Eliminados</a>
 
-    <a href="<?php echo base_url('/principal'); ?>" class="btn btn-primary regresar_btn">Regresar</a>
+    <a  style="margin-left: 10px;" href="<?php echo base_url('/principal'); ?>" class="btn btn-primary regresar_btn">Regresar</a>
 
   </div>
-  <div class="table-responsive">
+  <div class="table-responsive" style="margin-top: 20px;">
     <table class="table table-bordered table-sm table-striped" id="dataTable" width="100%" cellspacing="0">
       <thead>
-        <tr style="color: #00278C;font-family: 'Amaranth';font-style: normal;font-size: 20px;text-align: center;">
+        <tr style="color: #000632; background: #6095BC; font-family: 'Amaranth';font-style: normal;font-size: 20px;text-align: center;">
           <th>Id</th>
           <th>Codigo</th>
           <th>Nombre</th>
@@ -22,7 +24,7 @@
           <th colspan="2">Acciones</th>
         </tr>
       </thead>
-      <tbody style="color: #00278C;font-family: 'Amaranth';font-style: normal;font-size: 20px;text-align: center;" >
+      <tbody style="background: #9de8ff; font-family: 'Amaranth';font-style: normal;font-size: 20px;text-align: center;" >
         <?php foreach ($paises as $dato) { ?>
           <tr>
             <td><?php echo $dato['id']; ?></td>
@@ -106,13 +108,12 @@
 
 <div class="modal fade" id="modal-confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div style="background: linear-gradient(90deg, #838da0, #b4c1d9);" class="modal-content">
-                <div style="text-align:center;" class="modal-header">
-                    <h5 style="color:#98040a;font-size:20px;font-weight:bold;" class="modal-title" id="exampleModalLabel">Eliminación de Registro</h5>
-                   
+            <div style="" class="modal-content">
+                <div style="align-items: center;" class="modal-header">
+                    <h5 style="color:#C40000;font-size:25px; font-family: Georgia, serif; text-align: center;" class="modal-title" id="exampleModalLabel">Eliminación de Registro</h5>
                 </div>
-                <div style="text-align:center;font-weight:bold;" class="modal-body">
-                    <p>Seguro Desea Eliminar éste Registro?</p>
+                <div style="text-align:center; font-weight:bold; font-size:20px; font-family: Georgia, serif" class="modal-body">
+                    <p>¿Seguro Desea eliminar éste Registro?</p>
                     <input hidden  id="estado" name="estado"></>
                     <input hidden id="id" name="id"></>
                 </div>

@@ -8,7 +8,7 @@ header{
     left: 0px;
     top: -4px;
     background: #72DDFF;
-    border: 5px solid #00074A
+    border: 5px solid rgb(52, 179, 191);
 }
 img{
     width: 170px;
@@ -25,7 +25,7 @@ img{
     top: 159px;
     background: #6095BC;
     border: 5px solid #00074A;
-    
+
 }
 
 
@@ -62,7 +62,7 @@ img{
     font-style: normal;
     font-size: 55px;
     text-align: center;
-    color: #00278C;
+    color:  #00278C;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -99,6 +99,7 @@ img{
     right: 95px;
     top: 3px;
 }
+
 #dpo{
     position: absolute;
     width: 50px;
@@ -106,6 +107,7 @@ img{
     right: 5px;
     top: 48px;
 }
+
 #mun{
     position: absolute;
     width: 50px;
@@ -148,7 +150,7 @@ img{
     left: 235px;
     top: 5px;
 }
-
+#tare:hover{transform:scale(1.3);}
 #emple{
     position: absolute;
     width: 60px;
@@ -156,6 +158,25 @@ img{
     left: 35px;
     top: -3px;
 }
+#emple:hover{transform:scale(1.3);}
 
+#bpai{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 5px;
+    top: 330px;
+}
+#bpai:hover{transform:scale(1.1);}
+#epai{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 170px;
+    top: 330px;
+}
+#epai:hover{transform:scale(1.1);}
 
-
+body{
+    background-image: url('../img/fondo.png');
+}

@@ -14,7 +14,7 @@
     <div class="table-responsive">
                 <table class="table table-bordered table-sm table-striped" id="dataTable" width="100%" cellspacing="0">
                     <thead>
-                        <tr style="color:#342C6E;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
+                        <tr style="color: #000632; background: #6095BC; font-family: 'Amaranth';font-style: normal;font-size: 20px;text-align: center;">
                             <th>Id</th>
                             <th>Pais</th>
                             <th>Departamento</th>
@@ -23,7 +23,7 @@
                             <th colspan="2">Acciones</th>
                         </tr>
                     </thead>
-                    <tbody style="font-family:Arial;font-size:12px;">
+                    <tbody style="background: #9de8ff; font-family: 'Amaranth';font-style: normal;font-size: 20px;text-align: center;" >
                         <?php foreach ($municipios as $dato) { ?>
                           <tr>
                               <td><?php echo $dato ['id'];?></td>
@@ -31,8 +31,8 @@
                               <td><?php echo $dato ['nombre_dpto'];?></td>
                               <td><?php echo $dato ['nombre'];?></td>
                               <td><?php echo $dato ['estado'];?></td>
-                              <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarMunicipios" onclick="seleccionaMunicipio(<?php echo $dato['id'] . ',' . 2 ?>);">editar</button>
-                                  <button type="button" class="btn btn-secondary"  href="#" data-href="<?php echo base_url('/municipios/eliminar') . '/' .$dato['id']. '/' .'E'; ?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma">Eliminar</button></td>
+                              <td><button style="font-family:Arial;font-size:17px;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarMunicipios" onclick="seleccionaMunicipio(<?php echo $dato['id'] . ',' . 2 ?>);">editar</button>
+                                  <button style="font-family:Arial;font-size:17px;" type="button" class="btn btn-secondary"  href="#" data-href="<?php echo base_url('/municipios/eliminar') . '/' .$dato['id']. '/' .'E'; ?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma">Eliminar</button></td>
                               </tr>
                               <?php }?>
                     </tbody>
@@ -131,6 +131,8 @@
       })
     }else {
       $("#tp").val(1);
+      $("#pais").text('Seleccionar Pais');
+      $("#dpto").val('Seleccionar Departamento');
       $("#nombre").val('');
       $("#btn_Guardar").text('Guardar');
       $("#tituloo").text('Agregar Municipio');
