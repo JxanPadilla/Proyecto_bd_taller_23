@@ -180,3 +180,10 @@ img{
 body{
     background-image: url('../img/fondo.png');
 }
+
+#edi{
+    width: 40px;
+    height: 40px;
+    /* right: 2px; */
+    
+}

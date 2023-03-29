@@ -31,8 +31,8 @@
             <td><?php echo $dato['codigo']; ?></td>
             <td><?php echo $dato['nombres']; ?></td>
             <td><?php echo $dato['estado']; ?></td>
-            <td><button style="font-family:Arial;font-size:17px;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarPais" onclick="seleccionaPaises(<?php echo $dato['id'] . ',' . 2 ?>);">editar</button>
-            <button  style="font-family:Arial;font-size:17px;" type="button" class="btn btn-secondary"  href="#" data-href="<?php echo base_url('/paises/eliminar') . '/' .$dato['id']. '/' .'E'; ?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma">Eliminar</button></td> 
+            <td><button style="font-family:Arial;font-size:17px; background:transparent; border:none;" type="button"  data-bs-toggle="modal" data-bs-target="#AgregarPais" onclick="seleccionaPaises(<?php echo $dato['id'] . ',' . 2 ?>);"><img id="edi" src="<?php echo base_url('/img/editar.png'); ?>"></button>
+            <button  style="font-family:Arial;font-size:17px; background:transparent; border:none;" type="button" class="btn btn-secondary"  href="#" data-href="<?php echo base_url('/paises/eliminar') . '/' .$dato['id']. '/' .'E'; ?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma"><img id="edi" src="<?php echo base_url('/img/eliminar.png'); ?>"></button></td> 
            
         <?php } ?>
       </tbody>
