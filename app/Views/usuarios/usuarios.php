@@ -73,6 +73,7 @@
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Confirmar contraseña:</label>
                 <input type="password" name="contra2" class="form-control" id="contra2">
+                <small id="msgConfir" class="normal"></small>
               </div>
             </form>
           </div>
@@ -86,6 +87,45 @@
   </form>
 
   <script>
+
+function verifiContra(tipo) {
+        contra1 = $('#contra1').val()
+        contr2 = $('#contra2').val()
+        if (tipo == 2) {
+            if (contra1 == '' && contr2 == '') {
+                $('#msgConfir').text('').removeClass().addClass('normal')
+            } else if (contra1 == contr2) {
+                $('#msgConfir').text('¡Contraseñas valida!').removeClass().addClass('valido')
+            } else if (contra1 == '') {
+                $('#msgConfir').text('¡Ingrese una contraseña!').removeClass().addClass('normal')
+            } else if (contr2 == '') {
+                $('#msgConfir').text('').removeClass().addClass('normal')
+            } else if(contra1 != contr2) {
+                $('#msgConfir').text('¡Las contraseñas no coinciden!').removeClass().addClass('invalido')
+            }
+        } else {
+            if (contra1 == '' && contr2 == '') {
+                $('#msgConfir').text('').removeClass().addClass('normal')
+            } else if (contra1 == '' && contr2) {
+                $('#msgConfir').text('¡Ingrese una contraseña!').removeClass().addClass('normal')
+            }  else if (contr2 == '') {
+                $('#msgConfir').text('').removeClass().addClass('normal')
+            }else if (contr2 && contra1 == contr2) {
+                $('#msgConfir').text('¡Contraseñas valida!').removeClass().addClass('valido')
+            } 
+            else if( contr2 && contra1 != contr2) { 
+                $('#msgConfir').text('¡Las contraseñas no coinciden!').removeClass().addClass('invalido')
+            }
+        }
+    }
+    
+    $('#contra1').on('input', function(e){
+      verifiContra(2)
+    })
+
+    $('#contra2').on('input', function(e){
+      verifiContra(1)
+    })
 
     function seleccionaUsuario(id, tp) {
       if (tp == 2) {

@@ -194,3 +194,12 @@ body{
     /* right: 2px; */
     
 }
+small.normal{
+    color:rgb(196, 166, 0);
+}
+small.valido{
+    color:rgb(42, 218, 86);
+}
+small.invalido{
+    color:red;
+}
