@@ -37,6 +37,7 @@ $routes->get('eliminados_departamentos', 'departamentos::eliminados');
 $routes->get('eliminados_municipios', 'municipios::eliminados'); 
 $routes->get('eliminados_empleados', 'empleados::eliminados'); 
 $routes->get('eliminados_salarios', 'salarios::eliminados'); 
+$routes->get('eliminados_usuarios', 'usuarios::eliminados'); 
 $routes->get('salarioemple/(:num)', 'salarios::salariosG/$1'); 
 
 

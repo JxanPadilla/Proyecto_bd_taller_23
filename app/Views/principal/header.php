@@ -36,12 +36,15 @@
       </button>
       <div class="collapse navbar-collapse" id="indices" >
         <ul class="navbar-nav" >
+        <li class="nav-item">
+            <a  onMouseOver="this.style.cssText='color: #00074A'" onMouseOut="this.style.cssText='color: #FFFFFF'" class="nav-link" style="color: #FFFFFF;" href="<?php echo base_url('/usuarios'); ?>" tabindex="-1">&nbsp; &nbsp; Usuarios <img id="usu" src="<?php echo base_url('/img/usuario.png'); ?>"> </a>
+          </li>
           <li class="nav-item dropdown" >
             <a onMouseOver="this.style.cssText='color: #00074A'" onMouseOut="this.style.cssText='color: #FFFFFF'" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #FFFFFF; ">
-              Ubicacion   <img id="ubi" src="<?php echo base_url('/img/ubicacion.png'); ?>">
+            &nbsp; &nbsp; &nbsp; &nbsp; Ubicacion   <img id="ubi" src="<?php echo base_url('/img/ubicacion.png'); ?>">
             </a>
             <ul class="dropdown-menu" style="background: #6095BC; border: 1px solid #00074A; width: 230px; height: 150px; font-family: 'Amaranth'; font-style: normal; font-size: 25px; left: -46px ">
-              <li><a onMouseOver="this.style.cssText='background: #004A80; color: #FFFFFF'" onMouseOut="this.style.cssText='color: #FFFFFF'" class="dropdown-item"  style="color: #FFFFFF;" href="<?php echo base_url('/paises'); ?>">Paises <img id="pai" src="<?php echo base_url('/img/paises.png'); ?>"></a></li>
+              <li><a onMouseOver="this.style.cssText='background: #004A80; color: #FFFFFF'" onMouseOut="this.style.cssText='color: #FFFFFF'" class="dropdown-item"  style="color: #FFFFFF;" href="<?php echo base_url('/paises'); ?>"><img id="pai" src="<?php echo base_url('/img/paises.png'); ?>"> Paises</a></li>
               <li><a onMouseOver="this.style.cssText='background: #004A80; color: #FFFFFF'" onMouseOut="this.style.cssText='color: #FFFFFF'" class="dropdown-item"  style="color: #FFFFFF;" href="<?php echo base_url('/departamentos'); ?>">Departamentos <img id="dpo" src="<?php echo base_url('/img/departamento.png'); ?>"></a></li>
               <li><a onMouseOver="this.style.cssText='background: #004A80; color: #FFFFFF'" onMouseOut="this.style.cssText='color: #FFFFFF'" class="dropdown-item"  style="color: #FFFFFF;" href="<?php echo base_url('/municipios'); ?>">Municipios <img id="mun" src="<?php echo base_url('/img/municipio.png'); ?>"></a></li>
             </ul>
