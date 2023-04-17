@@ -5,13 +5,12 @@
   <h1 style="position: relative; top: 10px; font-family: Georgia, serif; font-style: normal; font-size: 55px; text-align: center; color:#00278C; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"><?php echo "Administrar Paises"; ?></h1>
   <img id="bpai" src="<?php echo base_url('/img/agregarP.png'); ?>">
   <img id="epai" src="<?php echo base_url('/img/eliminadosP.png'); ?>">
+  <img id="epai" style="margin-left: 190px;" src="<?php echo base_url('/img/salirP.png'); ?>">
 
   <div style="margin-top: 20px; ">
     <button style="margin-left: 80px;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AgregarPais" onclick="seleccionaPaises(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
     <a  style="margin-left: 80px;" href="<?php echo base_url('eliminados_paises'); ?>"  class="btn btn-secondary regresar_Btn">Eliminados</a>
-
-    <a  style="margin-left: 10px;" href="<?php echo base_url('/principal'); ?>" class="btn btn-primary regresar_btn">Regresar</a>
-
+    <a  style="margin-left: 80px;" href="<?php echo base_url('/principal'); ?>" class="btn btn-primary regresar_btn">Regresar</a> 
   </div>
   <div class="table-responsive" style="margin-top: 20px;">
     <table class="table table-bordered table-sm table-striped" id="dataTable" width="100%" cellspacing="0">
@@ -43,22 +42,22 @@
 
     <div class="modal fade" id="AgregarPais" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" style="background: #a3eaff">
           <div class="modal-header">
-            <h5 class="modal-title" id="tituloo" >Agregar País</h5>
+            <h5  style="margin-left: 170px; color:#C40000;font-size:25px; font-family: Georgia, serif;" id="tituloo" >Agregar País</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">Codigo:</label>
-                <input type="text" maxlength="3" name="codigo" class="form-control" id="codigo">
+                <label for="recipient-name" style="font-weight:bold; font-size:20px; font-family: amaranth; color:#00074A;" class="col-form-label">Codigo:</label>
+                <input type="text" style="background: transparent; border: 2px solid #6095BC;" maxlength="3" name="codigo" class="form-control" id="codigo">
                 <input hidden  id="tp" name="tp"></>
                 <input hidden id="id" name="id"></>
               </div>
               <div class="mb-3">
-                <label for="message-text" class="col-form-label">Nombre:</label>
-                <input type="text" name="nombre" class="form-control" id="nombre">
+                <label for="message-text" style="font-weight:bold; font-size:20px; font-family: amaranth; color:#00074A" class="col-form-label">Nombre:</label>
+                <input type="text" style="background: transparent; border: 2px solid #6095BC;" name="nombre" class="form-control" id="nombre">
               </div>
             </form>
           </div>
@@ -110,7 +109,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div style="" class="modal-content">
                 <div style="align-items: center;" class="modal-header">
-                    <h5 style="color:#C40000;font-size:25px; font-family: Georgia, serif; text-align: center;" class="modal-title" id="exampleModalLabel">Eliminación de Registro</h5>
+                    <h5 style="color:#C40000;font-size:25px; font-family: Georgia, serif; text-align: center;"  id="exampleModalLabel">Eliminación de Registro</h5>
                 </div>
                 <div style="text-align:center; font-weight:bold; font-size:20px; font-family: Georgia, serif" class="modal-body">
                     <p>¿Seguro Desea eliminar éste Registro?</p>

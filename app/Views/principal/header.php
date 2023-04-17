@@ -17,8 +17,7 @@
   <div class="titulos">
 
     <h1 id ="titulo"><?php echo $titulo; ?></h1>
-    <h4 style="color: 
-#00278C;" id ="nombret"><?php echo $nombre; ?></h4>
+    <h4 style="color: #00278C;" id ="nombret"><?php echo $nombre; ?></h4>
     <img id="lineas" src="<?php echo base_url('/img/lineas.png'); ?>">
     <img id="lineas1" src="<?php echo base_url('/img/lineas.png'); ?>">
 

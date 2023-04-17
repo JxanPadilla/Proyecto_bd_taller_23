@@ -5,14 +5,15 @@
 <body style="margin-top: 245px;">
 
     <div>
-      <h1 class="titulo" style="position: relative; top: 10px; font-family: Georgia, serif; font-style: normal; font-size: 55px; text-align: center; color: #C40000; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">Paises Eliminados</h1>
+      <h1  style="position: relative; top: 10px; font-family: Georgia, serif; font-style: normal; font-size: 55px; text-align: center; color:#00278C; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">Paises Eliminados</h1>
+      <img id="bpai" style="margin-left: 13px; margin-top: -26px;" src="<?php echo base_url('/img/regresarp.png'); ?>">
     </div>
     <div class="card-body" >
 
       <div class="row col-sm-12" >
       <div class="col-md-5ths col-lg-5ths col-xs-6 col-sm-5"></div>
       <div class="col-md-5ths col-lg-5ths col-xs-6 col-sm-2">        
-        <a style="margin-left: -813px;" href="<?php echo base_url('/paises'); ?>" class="btn btn-primary regresar_Btn">Regresar</a>
+        <a style="margin-left: -740px;" href="<?php echo base_url('/paises'); ?>" class="btn btn-primary regresar_Btn">Regresar</a>
       </div>
       </div>
 
@@ -36,7 +37,7 @@
                 <td><?php echo $dato['nombres']; ?></td>
                 <td><?php echo $dato['estado']; ?></td>
 
-                 <td><button style="font-family:Arial;font-size:17px;" type="button" class="btn btn-secondary"  href="#" data-href="<?php echo base_url('/paises/eliminar') . '/' .$dato['id']. '/' .'A'; ?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma">Activar</button></td>
+                 <td><button style="font-family:Arial;font-size:17px; background:transparent; border:none;" type="button" class="btn btn-secondary"  href="#" data-href="<?php echo base_url('/paises/eliminar') . '/' .$dato['id']. '/' .'A'; ?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma"><img id="edi" src="<?php echo base_url('/img/activaci.png'); ?>"></button></td>
 
               </tr>
             <?php } ?>
@@ -47,7 +48,7 @@
       <!-- Modal Confirma Eliminar -->
       <div class="modal fade" id="modal-confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div style="background: linear-gradient(90deg, #838da0, #b4c1d9);" class="modal-content">
+            <div style="" class="modal-content">
                 <div style="text-align:center;" class="modal-header">
                     <h5 style="color:#98040a;font-size:20px;font-weight:bold;" class="modal-title" id="exampleModalLabel">Activación de Registro</h5>
                     

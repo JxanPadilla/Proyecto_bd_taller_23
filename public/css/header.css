@@ -7,7 +7,7 @@ header{
     height: 163px;
     left: 0px;
     top: -4px;
-    background: #72DDFF;
+    background: #72ddff;
     border: 5px solid rgb(52, 179, 191);
 }
 img{
@@ -183,6 +183,7 @@ img{
     top: 330px;
 }
 #epai:hover{transform:scale(1.1);}
+
 
 body{
     background-image: url('../img/fondo.png');
